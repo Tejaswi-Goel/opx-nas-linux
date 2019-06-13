@@ -30,7 +30,7 @@ bool INTERFACE::os_interface_mgmt_attrs_handler(if_details *details, cps_api_obj
 {
 
     if ((details->if_name.c_str() != nullptr)
-            && (strncmp(details->if_name.c_str(), MGMT_INTF_NAME, strlen(MGMT_INTF_NAME)) == 0)) {
+            && (strcmp(details->if_name.c_str(), MGMT_INTF_NAME) == 0)) {
         details->_type = BASE_CMN_INTERFACE_TYPE_MANAGEMENT;
     }
 

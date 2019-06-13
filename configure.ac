@@ -13,11 +13,10 @@
 # See the Apache Version 2.0 License for specific language governing
 # permissions and limitations under the License.
 #
-
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.69])
-AC_INIT([opx-nas-linux], [5.25.0+opx3], [ops-dev@lists.openswitch.net])
+AC_INIT([opx-nas-linux], [5.28.0], [ops-dev@lists.openswitch.net])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])

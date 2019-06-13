@@ -111,6 +111,15 @@ t_std_error nas_os_refresh_neighbor (cps_api_object_t obj);
 t_std_error nas_os_resolve_neighbor (cps_api_object_t obj);
 
 /**
+ * @brief This sets the neighbor entry state in kernel
+ *
+ * @param obj CPS API object which contains arp/nd params
+ *
+ * @return STD_ERR_OK if successful, otherwise different error code
+ */
+t_std_error nas_os_set_neighbor_state (cps_api_object_t obj);
+
+/**
  * @brief : This creates the VRF in the kernel
  *
  * @param obj : CPS API object which contains VRF params

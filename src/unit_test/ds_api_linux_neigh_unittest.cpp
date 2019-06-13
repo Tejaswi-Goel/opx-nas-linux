@@ -84,11 +84,15 @@ bool test_get_all_neigh(void) {
         size_t mx = cps_api_object_list_size(gp.list);
         for ( ; ix < mx ; ++ix ) {
             cps_api_object_t obj = cps_api_object_list_get(gp.list,ix);
-            cps_api_object_attr_t mac = cps_api_object_attr_get(obj,cps_api_if_NEIGH_A_NBR_MAC);
-            hal_mac_addr_t m;
-            memcpy(m,cps_api_object_attr_data_bin(mac),sizeof(m));
-            char buff[50];
-            printf("Neigh: %s\n",std_mac_to_string(&m,buff,sizeof(buff)));
+            if (obj != NULL) {
+                cps_api_object_attr_t mac = cps_api_object_attr_get(obj,cps_api_if_NEIGH_A_NBR_MAC);
+                if (mac != NULL) {
+                    hal_mac_addr_t m;
+                    memcpy(m,cps_api_object_attr_data_bin(mac),sizeof(m));
+                    char buff[50];
+                    printf("Neigh: %s\n",std_mac_to_string(&m,buff,sizeof(buff)));
+                }
+            }
         }
         rc = true;
     }
